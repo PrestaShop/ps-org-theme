@@ -1,0 +1,16 @@
+
+<section class="section">
+  <div class="container">
+    <div class="row mx-xl-2">
+      <div class="col-xl mx-auto">
+        {{ partial "breadcrumb.html" . }}
+      </div>
+    </div>
+    <div class="row mx-xl-2">
+      {{ partial "toc.html" . }}
+      <div class="col-xl ml-auto">
+        <div class="content">{{ .Content }}</div>
+      </div>
+    </div>
+  </div>
+</section>

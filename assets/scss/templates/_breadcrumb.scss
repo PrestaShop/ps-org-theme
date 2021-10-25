@@ -1,0 +1,18 @@
+.breadcrumb {
+  background-color: transparent;
+  padding: .75rem 0;
+
+  a {
+    color: $primary-color;
+
+    &:hover {
+      color: $primary-color;
+      border-bottom: 1px dotted $border-color;
+      border-bottom-color: $primary-color;
+    }
+  }
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">"
+}

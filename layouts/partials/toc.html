@@ -1,0 +1,8 @@
+{{ if gt (len .TableOfContents) 500 }}
+<div id="toc" class="col-xl-2 order-xl-1">
+  <div class="wrapper">
+    <div class="toc-title">Table of Contents</div>
+    {{ .TableOfContents }}
+  </div>
+</div>
+{{ end}}

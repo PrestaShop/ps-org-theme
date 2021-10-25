@@ -23,7 +23,8 @@ $icon-font: '{{.icon_font | default "Font Awesome 5 Free"}}';
 @import 'common';
 
 @import 'templates/navigation.scss';
-
 @import 'templates/main.scss';
+@import 'templates/breadcrumb.scss';
+@import 'templates/toc.scss';
 
 @import 'custom';

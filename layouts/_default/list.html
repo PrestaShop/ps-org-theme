@@ -1,7 +1,5 @@
 {{ define "main" }}
 
-{{ partial "page-header.html" . }}
-
 <!-- checking blog -->
 {{ if or (or (eq .Section "post") (eq .Section "blog")) (or (eq .Section "categories") (eq .Section "tags") )}}
 
@@ -44,15 +42,7 @@
 
 <!-- regular page -->
 {{ else }}
-<section class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-10 mx-auto">
-        <div class="content">{{ .Content }}</div>
-      </div>
-    </div>
-  </div>
-</section>
+  {{ partial "page-content.html" . }}
 {{ end }}
 
 {{ end }}

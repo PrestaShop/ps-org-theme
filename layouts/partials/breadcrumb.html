@@ -1,0 +1,16 @@
+<nav aria-label="breadcrumb" id="breadcrumb">
+  <ol class="breadcrumb">
+    {{ define "partials/breadcrumb-item" }}
+      {{ $parent := .page.Parent }}
+      {{ if $parent }}
+        {{ partial "breadcrumb-item" (dict "page" $parent "isCurrent" false) }}
+      {{ end }}
+      {{ if .isCurrent }}
+        <li class="breadcrumb-item active" aria-current="page">{{ or .page.Params.menutitle .page.Title }}</li>
+      {{ else }}
+        <li class="breadcrumb-item"><a href="{{ .page.RelPermalink }}">{{ or .page.Params.menutitle .page.Title }}</a></li>
+      {{ end }}
+    {{ end }}
+    {{ partial "breadcrumb-item" (dict "page" . "isCurrent" true) }}
+  </ol>
+</nav>
