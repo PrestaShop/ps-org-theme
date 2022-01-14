@@ -286,7 +286,7 @@ old notices
   pre {
     display: block;
     padding: 9.5px;
-    margin: 10px 0px 10px;
+    margin-bottom: 0; // to remote the margin bottom from `.content *`
     white-space: pre-wrap;
   }
 

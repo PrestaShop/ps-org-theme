@@ -6,18 +6,21 @@
 }
 
 div.notices {
-  margin: 2rem 0;
+  margin: 1.5rem 0;
   position: relative;
   line-height: 1.6;
-  padding: 1rem 2rem;
-  padding-left: 3.5rem;
-  color: #555;
+  padding: 1rem 0 1rem 2.1rem;
+  color: $text-color;
   font-size: 90%;
-  border-radius: .2rem;
 
   /*@media (min-width: $tocBreakpoint) {
     margin: 2rem 2rem;
   }*/
+
+  & + & {
+    margin-top: -1.5rem;
+  }
+
 
   p {
     font-size: 1em;
@@ -56,16 +59,16 @@ div.notices {
   // icon
   &:before {
     position: absolute;
-    top: .6rem;
+    top: .75rem;
     font-family: $icon-font;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     content: '';
-    left: 1.3rem;
+    left: 0.3rem;
   }
 
   &.info {
     @include notice-border(#f0b37e);
-    background: #fff2db;
+    //background: #fff2db;
 
     &:before {
       color: #f5a132;
@@ -74,9 +77,9 @@ div.notices {
 
   &.warning {
     @include notice-border(rgba(217, 83, 79, 0.8));
-    background: #fae2e2;
+
     &, & p {
-      color: #6d2622;
+      color: #8d0c05;
     }
 
     &:before {
@@ -87,7 +90,6 @@ div.notices {
 
   &.note {
     @include notice-border(#6ab0de);
-    background: #e7f2fa;
 
     &:before {
       content: '\F05A';
@@ -97,11 +99,10 @@ div.notices {
 
   &.tip {
     @include notice-border(rgba(92, 184, 92, 0.8));
-    background: #e6f9e6;
 
     &:before {
-      content: '\F0EB';
-      color: rgb(92, 184, 92);
+      content: '\f0eb';
+      color: #4ca64c;
     }
   }
 }
