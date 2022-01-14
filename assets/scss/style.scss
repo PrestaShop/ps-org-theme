@@ -27,5 +27,7 @@ $icon-font: '{{.icon_font | default "Font Awesome 5 Free"}}';
 @import 'templates/breadcrumb.scss';
 @import 'templates/toc.scss';
 @import 'templates/notices.scss';
+@import 'templates/code.scss';
+@import 'templates/syntax-github.scss';
 
 @import 'custom';
