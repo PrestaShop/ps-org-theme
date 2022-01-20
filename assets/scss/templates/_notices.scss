@@ -1,0 +1,108 @@
+/* notices */
+
+@mixin notice-border($color) {
+  // kept in case we change our mind later
+  //border-left: 5px solid $color;
+}
+
+.notices {
+  margin: 1.5rem 0;
+  position: relative;
+  line-height: 1.6;
+  padding: 1rem 0 1rem 2.1rem;
+  color: $text-color;
+  font-size: 90%;
+
+  /*@media (min-width: $tocBreakpoint) {
+    margin: 2rem 2rem;
+  }*/
+
+  & + & {
+    margin-top: -1.5rem;
+  }
+
+
+  p {
+    font-size: 1em;
+    margin: {
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  ul, ol {
+    margin: {
+      top: .5rem;
+      bottom: .5rem;
+    }
+
+    li {
+      margin-bottom: 0 !important;
+    }
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  // code blocks
+  pre {
+    code {
+      font-size: 90%;
+    }
+
+    &:last-child {
+      margin-bottom: .8rem;
+    }
+  }
+
+  // icon
+  &:before {
+    position: absolute;
+    top: .75rem;
+    font-family: $icon-font;
+    font-size: 1.2rem;
+    content: '';
+    left: 0.3rem;
+  }
+
+  &.info {
+    @include notice-border(#f0b37e);
+    //background: #fff2db;
+
+    &:before {
+      color: #f5a132;
+    }
+  }
+
+  &.warning {
+    @include notice-border(rgba(217, 83, 79, 0.8));
+
+    &, & p {
+      color: #8d0c05;
+    }
+
+    &:before {
+      content: '\F071';
+      color: rgb(217, 83, 79);
+    }
+  }
+
+  &.note {
+    @include notice-border(#6ab0de);
+
+    &:before {
+      content: '\F05A';
+      color: #4ea5de;
+    }
+  }
+
+  &.tip {
+    @include notice-border(rgba(92, 184, 92, 0.8));
+
+    &:before {
+      content: '\f0eb';
+      color: #4ca64c;
+    }
+  }
+}

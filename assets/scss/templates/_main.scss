@@ -191,6 +191,8 @@ a.post-title {
     margin-bottom: 0;
   }
 
+/*
+old notices
   .notices {
     margin: 2rem 0;
     position: relative;
@@ -265,7 +267,7 @@ a.post-title {
     color: #fff;
     left: 2rem;
   }
-
+*/
 
   blockquote {
     font-size: 20px !important;
@@ -284,13 +286,12 @@ a.post-title {
   pre {
     display: block;
     padding: 9.5px;
-    margin: 10px 0px 10px;
+    margin-bottom: 0; // to remove the margin bottom from `.content *`
     white-space: pre-wrap;
   }
 
   code {
     margin-bottom: 0 !important;
-    font-size: 100%;
   }
 }
 
