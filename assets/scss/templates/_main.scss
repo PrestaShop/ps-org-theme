@@ -159,22 +159,19 @@ a.post-title {
     border: 1px solid $border-color;
   }
 
-  table td,
-  table th {
+  td,
+  th {
     padding: .75rem;
-    vertical-align: top;
     margin-bottom: 0;
-  }
+    vertical-align: middle;
 
-  th,
-  td {
     &:not(:last-of-type) {
       border-right: 1px solid $border-color;
     }
   }
 
   th {
-    font-weight: 500;
+    font-weight: 600;
   }
 
   thead {
