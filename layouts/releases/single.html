@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+
+<section class="section pb-0">
+    <div class="jumbotron">
+      <div class="container text-center">
+      <h1 class="display-4">{{ .Title | markdownify }}</h1>
+      {{ with .Params.subtitle }}
+        <p class="lead">{{ . | markdownify }}</p>
+      {{ end }}
+      {{ with .Params.downloadUrl }}
+        <hr class="my-4">
+        <p>You can download the latest version directly from our GitHub</p>
+        <a class="btn btn-primary" href="{{ . }}">Download</a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+
+<div class="content">
+    {{ .Content }}
+</div>
+
+{{ end }}
