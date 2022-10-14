@@ -1,5 +1,6 @@
 <meta charset="utf-8">
 <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"/>
 
 <!-- multilingual SEO optimizations -->
 {{ if .IsTranslated }}
