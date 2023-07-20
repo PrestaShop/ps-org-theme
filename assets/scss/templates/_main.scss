@@ -297,6 +297,23 @@ old notices
   code {
     margin-bottom: 0 !important;
   }
+
+  figure {
+    text-align: center;
+    > img {
+      max-width: 80%;
+      @include desktop-lg {
+        max-width: 100%;
+      }
+    }
+  }
+
+  figcaption > p {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 30px;
+    font-size: 90%;
+  }
 }
 
 
