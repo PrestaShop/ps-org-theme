@@ -1,14 +1,10 @@
 .nav-item {
   margin: 0;
-
-  .nav-link {
-    text-transform: capitalize;
-    font-weight: 700;
-  }
 }
 
 .navbar-light .navbar-nav .nav-link {
   color: $text-color-dark;
+  text-transform: uppercase;
 
   &:hover {
     color: $primary-color;
@@ -16,7 +12,8 @@
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-  padding: 20px;
+  font-size: 0.9em;
+  padding: 20px 14px;
 
   @include desktop {
     padding: 10px;
