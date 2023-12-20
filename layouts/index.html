@@ -134,7 +134,10 @@
         {{with .content }}<p class="mb-4 text-white">{{ . | markdownify }}</p>{{ end }}
         {{ if .button.enable }}
         {{ with .button }}
-        <a href="{{ .link | relURL }}" title="{{ .label }}" class="btn btn-sm btn-white btn-arrow-right mt-3 mt-md-4">{{ .label }}</a>
+        <a href="{{ .link | relURL }}" title="{{ .label }}" class="cta--pattern cta">
+          <span>{{ .label }}
+          </span>
+        </a>
         {{ end }}
         {{ end }}
       </div>
