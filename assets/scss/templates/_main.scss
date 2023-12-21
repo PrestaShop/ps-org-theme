@@ -13,17 +13,44 @@ main {
 
 // banner
 .banner {
-  padding: 100px 0 50px;
+  padding: 140px 0 0;
+  margin-top: -100px;
+  margin-bottom: 50px;
+  background: #F8E08E;
+
+  .banner-title {
+    font-family: Prestafont, arial, sans-serif;
+    font-weight: normal;
+    font-size: 6em;
+    line-height: 0.9em;
+
+    @include desktop {
+      font-size: 3em;
+    }
+    @include tablet {
+      font-size: 3em;
+    }
+    @include mobile {
+      font-size: 2em;
+    }
+  }
+
+  .banner-description {
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+
+  img {
+    margin-bottom: -60px;
+  }
 }
 
 .feature-card {
-  border-radius: 10px;
   padding: 20px;
-  transition: .2s ease;
   background-color: $white;
 
-  &:hover {
-    @extend .shadow;
+  &, h4, p {
+    transition: .2s ease;
   }
 
   svg,i {
@@ -47,11 +74,17 @@ main {
   display: block;
   padding: 5px 0;
   font-size: 16px;
-  color: $text-color;
-  margin: 8px 0;
+  color: $primary-color;
+  margin: 8px 12px 8px 0;
+
+  &:after {
+    padding-left: .3em;
+    content: '►';
+    font-size: .8em;
+  }
 
   &:hover {
-    color: $primary-color;
+    color: $link-color;
   }
 }
 
@@ -113,12 +146,11 @@ a.post-title {
   }
 
   a {
-    color: $primary-color;
+    color: $link-color;
     border-bottom: 1px dotted $border-color;
 
     &:hover {
-      color: $primary-color;
-      border-bottom-color: $primary-color;
+      border-bottom-color: $link-color;
     }
   }
 

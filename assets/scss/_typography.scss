@@ -1,4 +1,9 @@
 /*  typography */
+@font-face {
+  font-family: Prestafont;
+  font-weight: 400;
+  src: url(./../fonts/Prestafont-Regular.woff2) format("woff2");
+}
 
 body {
   line-height: 1.2;
@@ -28,37 +33,34 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   color: $text-color-dark;
-  font-family: $primary-font;
+  font-family: "Arial Black", sans-serif;
+  text-transform: uppercase;
   font-weight: 700;
   line-height: 1.2;
 }
 
 h1,
 .h1 {
-  font-size: 48px;
-
-  @include tablet {
-    font-size: 40px;
-  }
+  font-size: 30px;
 }
 
 h2,
 .h2 {
-  font-size: 38px;
+  font-size: 25px;
 
   @include tablet {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 
 h3,
 .h3 {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 h4,
 .h4 {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 h5,
