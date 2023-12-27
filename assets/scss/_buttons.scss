@@ -1,128 +1,86 @@
 /* Button style */
-.btn {
-  font-size: 16px;
-  font-family: $primary-font;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 15px 20px;
-  border-radius: 0;
+.cta {
+  --offset: .4rem;
+  background-color: transparent;
   border: 0;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: .05rem;
+  padding: 0;
   position: relative;
-  z-index: 1;
-  transition: .2s ease;
-  white-space: nowrap;
+  text-decoration: none;
+  text-transform: uppercase;
 
   &::before {
-    position: absolute;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6.5 13' style='enable-background:new 0 0 6.5 13' xml:space='preserve'%3E%3Cstyle%3E.st0{fill:gray}%3C/style%3E%3Ccircle class='st0' cx='4.3' cy='5.4' r='1.1'/%3E%3Ccircle class='st0' cx='1.1' cy='11.9' r='1.1'/%3E%3C/svg%3E");
+    background-position: 0 100%;
+    background-repeat: repeat;
+    background-size: .4rem auto;
+    bottom: 0;
     content: "";
     height: 100%;
+    left: 0;
+    position: absolute;
+    transition: all .3s cubic-bezier(.215, .61, .355, 1);
     width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    border-radius: inherit;
-    transition: inherit;
-    background-color: inherit;
-    border: 1px solid transparent;
+    z-index: 1;
   }
 
   &:hover,
   &:active,
   &:focus {
-    outline: 0;
-    @extend .shadow;
-
-    &::before {
-      height: 110%;
-      width: 110%;
-    }
+    outline: none;
   }
 
-  &-sm {
-    padding: 12px 30px;
-    font-size: 15px;
+  &:hover span {
+    transform: translate(var(--offset), calc(var(--offset) * -1));
   }
-}
 
-.btn-sm {
-    padding: 12px 14px;
-    font-size: 15px;
-}
+  & > span {
+    align-items: center;
+    background-color: #fff;
+    color: #000;
+    display: inline-flex;
+    padding: 1.4rem 2rem;
+    position: relative;
+    transition: all .3s cubic-bezier(.215, .61, .355, 1);
+    z-index: 2;
+  }
 
-.btn-primary {
-  background-color: $primary-color;
-  color: $white !important;
-  border-color: $primary-color;
-
-  &:active,
-  &:hover,
-  &.focus,
-  &.active {
-    background-color: $primary-color !important;
-    border-color: $primary-color !important;
+  & > span svg {
+    margin-left: 1.5rem !important;
+    min-width: 1rem;
+    width: 1rem;
   }
 }
 
-.btn-white {
-  background-color: $white;
-  color: $black !important;
-  border-color: $white;
+.cta--pattern {
+  margin-right: var(--offset);
+  margin-top: var(--offset);
 
-  &:active,
-  &:hover,
-  &.focus,
-  &.active {
-    background-color: $black !important;
-    border-color: $black !important;
-    color: $white !important;
+  &:hover span {
+    transform: translate(calc(var(--offset) * 2), calc(var(--offset) * -2));
+  }
+
+  & span {
+    transform: translate(var(--offset), calc(var(--offset) * -1));
   }
 }
 
-.btn-arrow-right:after {
-  padding-left: .4em;
-  content: '►';
-}
-
-.btn-outline-primary {
-  background-color: transparent;
-  color: $text-color-dark;
-  border-color: transparent;
-
-  &:active,
-  &:hover,
-  &.focus,
-  &.active {
-    background-color: transparent !important;
-    border-color: $primary-color !important;
-    color: $primary-color;
-  }
-  &::before{
-    border-color: $primary-color;
+@media (min-width: 768px) {
+  .cta {
+    --offset: .8rem;
   }
 }
 
-.btn-link {
-  color: $primary-color;
+.cta-sm {
+  padding: 12px 14px;
+  font-size: 15px;
+}
 
-  i,
-  svg {
-    font-size: 12px;
-    margin-left: 5px;
-    margin-bottom: 1px;
-    transition: .2s ease;
-  }
-
-  &:active,
-  &:hover,
-  &.focus,
-  &.active {
-    color: $primary-color;
-    text-decoration: none;
-
-    i,
-    svg {
-      margin-left: 10px;
-    }
+.cta-dark {
+  & > span {
+    background-color: #000;
+    color: #fff;
   }
 }
