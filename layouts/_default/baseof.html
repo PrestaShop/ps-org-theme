@@ -12,12 +12,13 @@
 </head>
 
 <body>
-
 	{{ if hugo.IsProduction }}
-	{{ partialCached "preloader.html" . }}
+		{{ partial "google_analytics_noscript.html" . }}
+		{{ partialCached "preloader.html" . }}
 	{{ else }}
-	{{ partial "preloader.html" . }}
+		{{ partial "preloader.html" . }}
 	{{ end }}
+
 	{{ partial "header.html" . }}
 
 	<main>
